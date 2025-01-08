@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     resources :favorites_inns, only: [ :new, :create, :destroy ]
   end
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :inns, only: [ :show ]
+    end
+  end
+
   resource :inn_management, only: [:show]
 
   resources :favorite_lists, only: [ :index, :new, :create, :show ]
