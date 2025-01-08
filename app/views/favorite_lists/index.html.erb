@@ -1,0 +1,9 @@
+<%= link_to 'Criar lista', new_favorite_list_path %>
+
+<% if @favorite_lists.any? %>
+  <% @favorite_lists.each do |fl| %>
+    <%= link_to fl.name, fl %>
+  <% end %>
+<% else %>
+  <p> Você não possui nenhuma lista </p>  
+<% end %>

@@ -1,0 +1,8 @@
+<h1> <%= @favorite_list.name %> </h1>
+
+<% @favorite_list.favorites_inns.each do |fi| %>
+  <div id="<%= fi.inn.id %>">
+    <%= link_to fi.inn.name, fi.inn %>
+    <%= button_to 'Remover', inn_favorites_inn_path([@inn, fi.inn]), method: :delete %>
+  </div>
+<% end %>

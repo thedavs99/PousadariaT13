@@ -1,0 +1,12 @@
+<h1> Adicionar <%= @inn.name %> a uma lista </h1>
+
+<%= form_with model: [@inn, @favorites_inn] do |f| %>
+  <div>
+    <%= f.label :favorite_list_id, 'Suas listas' %>
+    <%= f.collection_select :favorite_list_id, @favorite_lists, :id, :name %>
+  </div>
+  
+  <div>
+    <%= f.submit 'Adicionar' %>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
 <h1><%= @inn.name %></h1>
 <p class="lead"><%= @inn.full_address %></p>
-
+<p><%= link_to 'Adicionar a favoritos', new_inn_favorites_inn_path(@inn) %></p>
 <section id="rooms">
   <h2>Quartos</h2>
   <div class="row">
